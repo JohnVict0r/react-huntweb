@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import api from '../../services/api';
 
 import './styles.css';
@@ -27,6 +28,8 @@ export default class Product extends Component {
                <p>
                     URL: <a href={product.url}>{product.url}</a>
                </p>
+
+               <Link to={'/'}>Voltar</Link>
            </div> 
         )
     }
