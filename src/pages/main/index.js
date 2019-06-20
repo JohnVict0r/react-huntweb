@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import api from "../../services/api";
 
-import "./styles.css";
 import Article from "../../components/Article";
+import Footer from "../../components/Footer";
+
+import "./styles.css";
 
 export default class Main extends Component {
   //State é sempre um objeto
@@ -60,14 +62,7 @@ export default class Main extends Component {
         {products.map(product => (
           <Article product={product} />
         ))}
-        <div className="actions">
-          <button disabled={page === 1} onClick={this.prevPage}>
-            Anterior
-          </button>
-          <button disabled={page === productInfo.pages} onClick={this.nextPage}>
-            Próxima
-          </button>
-        </div>
+        <Footer productInfo={productInfo} page={page} prevPage={this.prevPage} nextPage={this.nextPage} />
       </div>
     );
   }
